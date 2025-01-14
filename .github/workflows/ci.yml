@@ -11,7 +11,7 @@ jobs:
     - name: Dependencies
       run: sudo apt-get install build-essential cmake libboost-all-dev liblzma-dev
     - name: Configure
-      run: cmake --version && cmake -B ${{github.workspace}}/build -Werror=dev -Werror=deprecated -DCONTINUOUS_INTEGRATION=1
+      run: cmake --version && cmake -B ${{github.workspace}}/build -Werror=dev -Werror=deprecated -DCONTINUOUS_INTEGRATION=1 -DUSE_STATIC_LIBS=ON
     - name: Build
       run: cmake --build ${{github.workspace}}/build
     - uses: actions/upload-artifact@v4
